@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Members' List</title>
+</head>
+<body>
+    <form action="/update/{{students.id}}" method="POST" class="post-form">
+        <input type="hidden" name="id" id="id" value="{{ students.s_id }}" required maxlength="20">
+        {% csrf_token %}
+        <div class="comtainer">
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Enter Details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Member's Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="first_name" value="{{members.first_name}}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Your Last Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="last_name" value="{{members.last_name}}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Member's Email:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="email" value="{{members.email}}">
+                </div>
+            </div><br>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
