@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'crispy_forms',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +86,7 @@ DATABASES = {
         'HOST': '',
         'PORT': '',
         'OPTION': {
+            'sql_mode': 'traditional',
             'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"
         }
     }

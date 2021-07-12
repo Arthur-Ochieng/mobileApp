@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,16 +22,19 @@
 				{% if next %}
 				<p>Hey, you can't access that page</p>
 				{% endif %}
-				<form action="{% url 'login' %}" method="POST" class="sign-in-form" autocomplete="off">
+				<form action="{% url 'login' %}" method="POST" class="sign-in-form" autocomplete="false">
 					{% csrf_token %}
 					<img src="{% static 'images/logo.jpeg' %}" alt="" width="25%"><br>
+					
 					<h2 class="title">Sign in</h2>
 					<div class="input-field">
 						<i class="fas fa-user"></i>
+						<!-- <input type="text" placeholder="Username"> -->
 						<p> {{ form.username }}</p>
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
+						<!-- <input type="password" placeholder="Password"> -->
 						<p> {{ form.password }}</p>
 					  </div>
 					<p><input type="submit" class="btn" value="login"></p>

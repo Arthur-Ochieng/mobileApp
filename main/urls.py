@@ -5,8 +5,11 @@ urlpatterns = [
 	path('', views.dashboard, name = 'dashboard'),
 	path('logout/', views.logout, name= 'logout'),
 	path('members/', views.members, name = 'members'),
-	path('delete/<int:id>', views.delete),
-	path('edit/<int:id>', views.edit),
+	path('loans/', views.loans, name = 'loans'),
+	# path('savings/', views.savings, name = 'saving'),
+	path('saved/', views.saved, name = 'saved'),
+	# path('delete/<int:id>', views.delete),
+	# path('edit/<int:id>', views.edit),
 ]
 
 

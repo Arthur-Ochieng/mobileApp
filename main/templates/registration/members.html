@@ -1,4 +1,4 @@
-{% extends 'registration/base.html'%}
+{% extends 'registration/base2.html'%}
 
 {% block content %}
     <br>
@@ -8,6 +8,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
+                <th>Gender</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -16,6 +17,7 @@
             <td>{{ member.first_name }}</td>
             <td>{{ member.last_name }}</td>
             <td>{{ member.email }}</td>
+            <td>{{ member.gender }}</td>
             <td>
                 <!-- <a href="/edit/{{ member.id }}"> <span class="btn btn-primary">Edit</span></a> -->
                 <a href="/delete/{{ member.id }}" class="btn btn-danger" >Delete</a>
